@@ -6,7 +6,7 @@
       :no-results-text="$t('dataTable.NO_RESULTS')"
       :headers="headers"
       :items="items"
-      :options.sync="pagination"
+      v-model:options="pagination"
       :items-per-page="5"
       :server-items-length="totalItems"
       class="elevation-1"
@@ -190,7 +190,7 @@
                               id="city"
                               name="city"
                               :label="$t('users.headers.CITY')"
-                              :search-input.sync="searchInput"
+                              v-model:search-input="searchInput"
                               v-model="editedItem.city"
                               :items="allCities"
                               clearable

@@ -11,7 +11,7 @@ module.exports = {
     'formidable/rules/eslint/node/off',
     'formidable/rules/eslint/style/on',
     'formidable/rules/eslint/variables/on',
-    'plugin:vue/essential',
+    'plugin:vue/vue3-essential',
     '@vue/prettier'
   ],
   rules: {

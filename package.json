@@ -2,33 +2,17 @@
   "name": "vue-skeleton-mvp",
   "version": "5.0.11",
   "description": "VueJS Vuetify Vue Router Vuex - Basic Project Skeleton - Starter Web App. Written on JavaScript using async/await.",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/davellanedam/vue-skeleton-mvp.git"
-  },
   "scripts": {
-    "generate-build-version": "node generate-build-version",
     "serve": "vue-cli-service serve",
     "build": "npm run generate-build-version && vue-cli-service build",
-    "format": "prettier --write --config .prettierrc \"**/*.js\"",
-    "lint": "vue-cli-service lint --fix",
-    "test:e2e": "vue-cli-service test:e2e --mode e2e",
     "test:unit": "vue-cli-service test:unit",
-    "remark": "remark . -o",
+    "test:e2e": "vue-cli-service test:e2e --mode e2e",
+    "lint": "vue-cli-service lint --fix",
     "ci": "vue-cli-service test:e2e --env API_URL=https://api-demo.daniel-avellaneda.com,ENV=ci --headless --config video=false",
-    "coverage": "nyc report --reporter=text-summary"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm run remark"
-    }
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
+    "coverage": "nyc report --reporter=text-summary",
+    "format": "prettier --write --config .prettierrc \"**/*.js\"",
+    "generate-build-version": "node generate-build-version",
+    "remark": "remark . -o"
   },
   "dependencies": {
     "@mdi/font": "^5.6.55",
@@ -37,7 +21,7 @@
     "date-fns": "^2.16.1",
     "remark-cli": "^8.0.1",
     "vee-validate": "^3.4.0",
-    "vue": "^2.6.12",
+    "vue": "^3.0.0-beta.1",
     "vue-analytics": "^5.22.1",
     "vue-country-flag": "^2.0.1",
     "vue-i18n": "^8.22.0",
@@ -46,7 +30,7 @@
     "vue-router": "^3.4.6",
     "vuetify": "^2.3.13",
     "vuetify-confirm": "^2.0.6",
-    "vuex": "^3.5.1"
+    "vuex": "^4.0.0-alpha.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.1",
@@ -57,8 +41,9 @@
     "@vue/cli-plugin-eslint": "^4.5.7",
     "@vue/cli-plugin-unit-mocha": "^4.5.7",
     "@vue/cli-service": "^4.5.7",
+    "@vue/compiler-sfc": "^3.0.0-beta.1",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/test-utils": "^1.1.0",
+    "@vue/test-utils": "^2.0.0-alpha.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-istanbul": "^6.0.0",
     "chai": "^4.2.0",
@@ -79,9 +64,14 @@
     "stylus-loader": "^4.1.1",
     "vue-cli-plugin-axios": "0.0.4",
     "vue-cli-plugin-i18n": "^1.0.1",
+    "vue-cli-plugin-vue-next": "~0.1.4",
     "vue-cli-plugin-vuetify": "^2.0.7",
-    "vue-template-compiler": "^2.6.12",
     "vuetify-loader": "^1.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run remark"
+    }
   },
   "keywords": [
     "vuejs",
@@ -105,5 +95,16 @@
     "cypress",
     "mocha",
     "chai"
-  ]
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,vue}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davellanedam/vue-skeleton-mvp.git"
+  }
 }

@@ -7,7 +7,7 @@ _
       :no-results-text="$t('dataTable.NO_RESULTS')"
       :headers="headers"
       :items="items"
-      :options.sync="pagination"
+      v-model:options="pagination"
       :items-per-page="5"
       :server-items-length="totalItems"
       class="elevation-1"

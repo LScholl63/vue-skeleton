@@ -163,7 +163,7 @@
                       id="city"
                       name="city"
                       :label="$t('myProfile.CITY')"
-                      :search-input.sync="searchInput"
+                      v-model:search-input="searchInput"
                       v-model="city"
                       :items="allCities"
                       clearable

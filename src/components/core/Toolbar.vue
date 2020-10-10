@@ -100,7 +100,7 @@
         </v-list-item>
 
         <v-list-group v-if="admin" prepend-icon="mdi-lock" no-action>
-          <v-list-item slot="activator" class="pl-0">
+          <v-list-item class="pl-0">
             <v-list-item-content>{{
               $t('adminItems.ADMIN')
             }}</v-list-item-content>

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, { createApp, h } from 'vue'
 import '@/plugins/axios'
 import vuetify from '@/plugins/vuetify'
 import '@/plugins/veevalidate'
@@ -10,22 +10,23 @@ import router from '@/router'
 import { store } from '@/store'
 import VuetifyConfirm from 'vuetify-confirm'
 
-Vue.config.productionTip = false
 Vue.use(VuetifyConfirm, { vuetify })
 
-const app = new Vue({
+const app = createApp({
   vuetify,
-  router,
-  store,
   i18n,
-  render: (h) => h(App),
+  render: () => h(App),
+
   created() {
     store.dispatch('setLocale', store.getters.locale)
     if (store.getters.isTokenSet) {
       store.dispatch('autoLogin')
     }
   }
-}).$mount('#app')
+})
+  .use(router)
+  .use(store)
+  .mount('#app')
 
 if (window.Cypress) {
   // Only available during E2E tests
